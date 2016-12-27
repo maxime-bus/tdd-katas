@@ -23,4 +23,10 @@ public class StringCalculatorTest {
         assertThat(StringCalculator.add("1,2")).isEqualTo(3);
         assertThat(StringCalculator.add("3,8")).isEqualTo(11);
     }
+
+    @Test
+    public void should_return_the_sum_for_any_number_contained_in_string_separated_by_comma() throws Exception {
+        assertThat(StringCalculator.add("1,2,3")).isEqualTo(6);
+        assertThat(StringCalculator.add("4,5,6")).isEqualTo(15);
+    }
 }
