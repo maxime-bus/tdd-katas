@@ -17,4 +17,10 @@ public class StringCalculatorTest {
         assertThat(StringCalculator.add("1")).isEqualTo(1);
         assertThat(StringCalculator.add("2")).isEqualTo(2);
     }
+
+    @Test
+    public void should_return_the_sum_if_string_contain_two_number_separated_by_comma() throws Exception {
+        assertThat(StringCalculator.add("1,2")).isEqualTo(3);
+        assertThat(StringCalculator.add("3,8")).isEqualTo(11);
+    }
 }
