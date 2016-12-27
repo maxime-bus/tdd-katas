@@ -4,8 +4,8 @@ public class StringCalculator {
 
     public static int add(String expression) {
 
-        if (expression.contains(",")) {
-            String[] stringNumbers = expression.split(",");
+        if (expression.contains(",") || expression.contains("\n")) {
+            String[] stringNumbers = expression.split("[,|\n]");
 
             int result = 0;
 

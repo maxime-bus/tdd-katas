@@ -29,4 +29,11 @@ public class StringCalculatorTest {
         assertThat(StringCalculator.add("1,2,3")).isEqualTo(6);
         assertThat(StringCalculator.add("4,5,6")).isEqualTo(15);
     }
+
+    @Test
+    public void newline_char_can_be_used_as_separator_mixed_with_comma() throws Exception {
+        assertThat(StringCalculator.add("4\n5,6")).isEqualTo(15);
+        assertThat(StringCalculator.add("3,3\n1")).isEqualTo(7);
+        assertThat(StringCalculator.add("1\n2\n3")).isEqualTo(6);
+    }
 }
