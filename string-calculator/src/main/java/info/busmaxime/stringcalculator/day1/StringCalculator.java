@@ -2,9 +2,12 @@ package info.busmaxime.stringcalculator.day1;
 
 public class StringCalculator {
 
+    public static final String COMMA_SEPARATOR = ",";
+    public static final String NEWLINE_SEPARATOR = "\n";
+
     public static int add(String expression) {
 
-        if (expression.contains(",") || expression.contains("\n")) {
+        if (expression.contains(COMMA_SEPARATOR) || expression.contains(NEWLINE_SEPARATOR)) {
             String[] stringNumbers = expression.split("[,|\n]");
 
             int result = 0;
@@ -16,14 +19,11 @@ public class StringCalculator {
             return result;
         }
 
-        if (notEmpty(expression)) {
+        if (!expression.isEmpty()) {
             return Integer.parseInt(expression);
         }
 
         return 0;
     }
 
-    private static boolean notEmpty(String expression) {
-        return !"".equals(expression);
-    }
 }
